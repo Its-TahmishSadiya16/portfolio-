@@ -1,1011 +1,1304 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Developer Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: rgb(0, 0, 33);
-            color: #F5F5F5;
-            font-family: "Poppins", sans-serif;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 70px;
-            background-color: rgb(3, 3, 56);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-        }
-
-        nav li {
-            list-style: none;
-            margin: 0 23px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-        }
-
-/* Hamburger Menu (Hidden by default) */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 4px;
-}
-
-/* Sidebar (Initially Hidden) */
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: -250px; /* Hidden off the screen */
-  width: 250px;
-  height: 40%;
-  background-color:rgba(3, 3, 55, 0.77);
-  padding: 20px;
-  transition: right 0.3s ease;
-  border-radius: 10px;
-    border: 3px solid;
-    border-image: linear-gradient(45deg, purple, blue) 1; /* Initial gradient border */
-
-}
-
-.sidebar ul {
-  list-style: none;
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <style>
+    /* * {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
-
-.sidebar ul li {
-  margin-bottom: 20px;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-}
-
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-  /* Hide full navbar */
-  .nav-links {
-    display: none;
-  }
-
-  /* Show hamburger menu */
-  .hamburger {
-    display: flex;
-  }
-
-  /* Sidebar open */
-  .sidebar.open {
-    right: 0;
-  }
-}
-
-        .left {
-            font-size: 1.5rem;
-            font-weight: bold;
-
-        }
-
-/* General Styles for the First Section */
-.firstSection {
+body {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 50px;
-  
-  color: #fff;
-  flex-direction: row; /* Image on the left for desktop */
-}
+  justify-content: center;
+  min-height: 100vh;
+  background: url("images/bg.jpg") #030728 no-repeat center;
+} */
 
-/* Text Section */
-.leftSection {
-  max-width: 50%;
-  
-}
+    .slider-wrapper {
+      overflow: hidden;
+      max-width: 1200px;
+      margin: 0 4px 5px;
+    }
 
-.leftSection h1 {
-  font-size: 2rem;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #fff;
-}
+    .card-list .card-item {
+      height: auto;
+      color: #fff;
+      user-select: none;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      /* backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.2); */
+      /* border: 1px solid rgba(255, 255, 255, 0.5); */
+    }
 
-.purple {
-            color: blueviolet;
-            font-size: 2.5rem;
+    .card-list .card-item .user-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 40px;
+      border: 3px solid #fff;
+      padding: 4px;
+    }
+
+    .card-list .card-item .user-profession {
+      font-size: 1.15rem;
+      color: #e3e3e3;
+      font-weight: 500;
+      margin: 14px 0 40px;
+    }
+
+    .card-list .card-item .message-button {
+      font-size: 1.25rem;
+      padding: 10px 35px;
+      color: #030728;
+      border-radius: 6px;
+      font-weight: 500;
+      cursor: pointer;
+      background: #fff;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .card-list .card-item .message-button:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #fff;
+      color: #fff;
+    }
+
+    .slider-wrapper .swiper-pagination-bullet {
+      background: #fff;
+      height: 13px;
+      width: 13px;
+      opacity: 0.5;
+    }
+
+    .slider-wrapper .swiper-pagination-bullet-active {
+      opacity: 1;
+
+    }
+
+    .slider-wrapper .swiper-slide-button {
+      color: #fff;
+      margin-top: -55px;
+      transition: 0.2s ease;
+    }
+
+    .slider-wrapper .swiper-slide-button:hover {
+      color: #4658ff;
+    }
+
+
+    @media (max-width: 768px) {
+      .slider-wrapper {
+        margin: 0 10px 40px;
+
+      }
+
+      .card-item {
+        margin: 0px;
+      }
+
+      .card-list .card-item .user-image {
+        width: 200px;
+        height: 150px;
+      }
+
+      .slider-wrapper .swiper-pagination-bullet-active {
+        margin-right: 2opx;
+      }
+
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+
+    }
+
+    body {
+      background-color: rgb(0, 0, 33);
+      color: #F5F5F5;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 70px;
+      background-color: rgb(3, 3, 56);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav li {
+      list-style: none;
+      margin: 0 23px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+    }
+
+    /* Hamburger Menu (Hidden by default) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px;
+    }
+
+    /* Sidebar (Initially Hidden) */
+    .sidebar {
+      position: fixed;
+      /* top: 0; */
+      right: -250px;
+      /* Hidden off the screen */
+      width: 250px;
+      height: 40%;
+      background-color: rgba(3, 3, 55, 0.77);
+      padding: 20px;
+      transition: right 0.3s ease;
+      border-radius: 10px;
+      border: 3px solid;
+      border-image: linear-gradient(45deg, purple, blue) 1;
+      /* Initial gradient border */
+      z-index: 1000;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+
+    /* Sidebar open */
+    .sidebar.open {
+      right: 0;
+      /* Shows the sidebar when the 'open' class is added */
+    }
+
+    /* Media Query for Mobile Devices */
+    @media (max-width: 768px) {
+
+      /* Hide full navbar */
+      .nav-links {
+        display: none;
+      }
+
+      /* Show hamburger menu */
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .left {
+      font-size: 1.5rem;
+      font-weight: bold;
+
+    }
+
+    /* General Styles for the First Section */
+    .firstSection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px;
+
+      color: #fff;
+      flex-direction: row;
+      /* Image on the left for desktop */
+    }
+
+    /* Text Section */
+    .leftSection {
+      max-width: 50%;
+
+    }
+
+    .leftSection h1 {
+      font-size: 2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+    }
+
+    .purple {
+      color: blueviolet;
+      font-size: 2.5rem;
+    }
+
+    #element {
+      color: blueviolet;
+      font-size: 2.2rem;
+    }
+
+    .hello {
+      font-size: 1.5rem;
+      margin-top: 15px;
+    }
+
+    .hellomg {
+      font-size: 1rem;
+      margin: 20px 0;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .btn {
+      background-color: blueviolet;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+      margin: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 20px blueviolet
+    }
+
+    .btn:hover {
+      background-color: skyblue;
+    }
+
+    .btnhm {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+
+    .about-image {
+      max-width: 40%;
+      margin-right: 30px;
+      /* Adds space between image and text */
+    }
+
+    .image-right {
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .cv-btn {
+      margin-right: 10px;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 100;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      background-color: rgba(0, 0, 0, 0.7);
+      /* Black background with opacity */
+    }
+
+    .modal-content {
+      background-color: #1E3A8A;
+      /* Dark blue */
+      margin: 5%;
+      /* 5% from the top and centered */
+      padding: 15px;
+      width: 25%;
+      max-height: 90vh;
+      /* Ensure it doesn't exceed the viewport height */
+      position: relative;
+      border-radius: 10px;
+      overflow-y: auto;
+      /* Allows content to scroll if it overflows */
+    }
+
+    .close {
+      color: #F5F5F5;
+      /* White */
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #87CEEB;
+      /* Sky Blue */
+    }
+
+    /* CV Viewer */
+    .cv-viewer {
+      width: 100%;
+      height: 70vh;
+      /* Adjust height as needed */
+      border: 5px solid #001f3f;
+      /* Add border to match first screenshot */
+      border-radius: 10px;
+      /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      /* Subtle shadow */
+      margin-top: 20px;
+      /* Keep this to maintain spacing */
+    }
+
+    /* Download Button */
+    .download-btn {
+      display: block;
+      margin-top: 10px;
+      color: #F5F5F5;
+      background-color: #8A2BE2;
+      /* Blueviolet */
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .download-btn:hover {
+      background-color: #87CEEB;
+      /* Sky Blue */
+    }
+
+
+
+    @media (max-width: 768px) {
+
+      /* Flex to column for mobile */
+      .firstSection {
+        flex-direction: column;
+        padding: 30px 10px;
+      }
+
+      .about-image {
+        order: -1;
+        /* Move image to the top */
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .leftSection {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      /* Decrease font sizes for mobile */
+      .leftSection {
+        font-size: 1.8rem;
+      }
+
+      .small {
+        font-size: 1rem;
+      }
+
+      .leftSection h1 {
+        font-size: 1rem;
+      }
+
+      .purple {
+        font-size: 1.4rem;
+      }
+
+      .hellomg {
+        font-size: 0.2rem;
+      }
+
+
+      .btn {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+      }
+
+      #element {
+        font-size: 1.3rem;
+
+      }
+
+
+      @media (max-width: 480px) {
+        .modal-content {
+          width: 95%;
+          /* Almost full width for very small devices */
+          margin: 15% auto;
+          /* Adjust top margin */
         }
 
-        #element {
-            color: blueviolet;
-            font-size: 2.2rem;
+        .cv-viewer {
+          height: 40vh;
+          /* Further reduce height for very small devices */
+          border: 2px solid #001f3f;
+          /* Thinner border */
         }
-.hello {
-  font-size: 1.5rem;
-  margin-top: 15px;
-}
 
-.hellomg {
-  font-size: 1rem;
-  margin: 20px 0;
-}
+        .download-btn {
+          padding: 6px 12px;
+          /* Even smaller padding for very small devices */
+        }
+      }
 
-.buttons {
-  margin-top: 20px;
-}
-.btn {
-  background-color: blueviolet;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  display: inline-block;
-  margin: 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  text-decoration:none ;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  box-shadow: 0 0 20px blueviolet
-}
+    }
 
-.btn:hover {
-  background-color: skyblue;
-}
-.btnhm{
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
+    #demo-projects .demo-carousel {
+      background-color: #1a1a3d;
+      padding: 20px;
+      border-radius: 10px;
+      border: 3px solid;
+      border-image: linear-gradient(45deg, purple, blue) 1;
+      /* Initial gradient border */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+      position: relative;
+      width: 280px;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation: borderRotate 4s linear infinite;
+      /* Apply animation */
+    }
 
+    @keyframes borderRotate {
+      0% {
+        border-image: linear-gradient(45deg, purple, blue) 1;
+      }
 
-.about-image {
-  max-width: 40%;
-  margin-right: 30px; /* Adds space between image and text */
-}
+      50% {
+        border-image: linear-gradient(45deg, blue, purple) 1;
+      }
 
-.image-right {
-  max-width: 100%;
-  height: auto;
-  border-radius: 50%;
-}.cv-btn {
-  margin-right: 10px;
-}
+      100% {
+        border-image: linear-gradient(45deg, purple, blue) 1;
+      }
+    }
 
-/* Modal Styles */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 100; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
-}
+    .read-more {
+      cursor: pointer;
+      color: blueviolet;
+      text-align: center;
+      margin-top: 10px;
+    }
 
-.modal-content {
-  background-color: #1E3A8A; /* Dark blue */
-  margin: 5% 
-  ; /* 5% from the top and centered */
-  padding: 15px;
-  width: 25%;
-  max-height: 90vh; /* Ensure it doesn't exceed the viewport height */
-  position: relative;
-  border-radius: 10px;
-  overflow-y: auto; /* Allows content to scroll if it overflows */
-}
+    .read-more:hover {
+      color: rgb(17, 146, 206);
+    }
 
-.close {
-  color: #F5F5F5; /* White */
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: #87CEEB; /* Sky Blue */
-}
-
-/* CV Viewer */
-.cv-viewer {
-  width: 100%;
-  height: 70vh; /* Adjust height as needed */
-  border: 5px solid #001f3f; /* Add border to match first screenshot */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  margin-top: 20px; /* Keep this to maintain spacing */
-}
-
-/* Download Button */
-.download-btn {
-  display: block;
-  margin-top: 10px;
-  color: #F5F5F5;
-  background-color: #8A2BE2; /* Blueviolet */
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.download-btn:hover {
-  background-color: #87CEEB; /* Sky Blue */
-}
-
-
-
-@media (max-width: 768px) {
-  /* Flex to column for mobile */
-  .firstSection {
-    flex-direction: column;
-    padding: 30px 10px;
-  }
-
-  .about-image {
-    order: -1; /* Move image to the top */
-    max-width: 100%;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .leftSection {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  /* Decrease font sizes for mobile */
-  .leftSection {
-    font-size: 1.8rem;
-  }
-
-  .small {
-    font-size: 1rem;
-  }
-
-  .leftSection h1{
-    font-size: 1rem;
-  }
-
-  .purple {
-    font-size: 1.4rem;
-  }
-
-  .hellomg {
-    font-size: 0.2rem;
-  }
-  
-
-  .btn {
-    font-size: 14px;
-    padding: 8px 15px;
-  }
-
-  .buttons {
-    display: flex;
-    justify-content: center;
-  }
-   #element{
-    font-size: 1.3rem;
-    
-  }
- 
-
-@media (max-width: 480px) {
-  .modal-content {
-    width: 95%; /* Almost full width for very small devices */
-    margin: 15% auto; /* Adjust top margin */
-  }
-
-  .cv-viewer {
-    height: 40vh; /* Further reduce height for very small devices */
-    border: 2px solid #001f3f; /* Thinner border */
-  }
-
-  .download-btn {
-    padding: 6px 12px; /* Even smaller padding for very small devices */
-  }
-}
-
-}
-
-
-        /* p {
+    /* p {
             margin-bottom: 10px;
             padding-left: 40px;
             width: 80%;
         } */
 
-        ul li {
-            padding-left: 40px;
-            list-style: none;
-            position: relative;
-          
-        }
-        .services ul {
-           /* padding-bottom: 2%; */
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 46px;
-        }
-        .services li::before {
-            content: "★";
-            color: blue;
-            margin-right: 10px;
-        }
-        .services li:hover .tooltip {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(-10px);
-            
-        }
-        .services li {
-    position: relative; /* Required to position the tooltip correctly */
-}
+    ul li {
+      padding-left: 40px;
+      list-style: none;
+      position: relative;
+
+    }
+
+    .services ul {
+      /* padding-bottom: 2%; */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 46px;
+    }
+
+    .services li::before {
+      content: "★";
+      color: blue;
+      margin-right: 10px;
+    }
+
+    .services li:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(-10px);
+
+    }
+
+    .services li {
+      position: relative;
+      /* Required to position the tooltip correctly */
+    }
 
 
-        .tooltip::after {
-    content: '';
-    position: absolute;
-    top: 100%; /* Bottom of the tooltip */
-    left: 50%;
-    margin-left: -10px;
-    border-width: 10px;
-    border-style: solid;
-    border-color: rgba(0, 0, 33, 0.9) transparent transparent transparent; /* Arrow pointing upwards */
-}
-.tooltip {
-    display: none;
-    position: absolute;
-    bottom: 120%; /* Adjust as needed to position the tooltip above the service item */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 33, 0.9);
-    color: white;
-    padding: 10px;
-    border: 1px solid blueviolet;
-    border-radius: 5px;
-    z-index: 10;
-    width: 250px;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-}
-        li:hover .tooltip {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-}
-        a {
-            color: rgb(147, 93, 198);
-        }
+    .tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      /* Bottom of the tooltip */
+      left: 50%;
+      margin-left: -10px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: rgba(0, 0, 33, 0.9) transparent transparent transparent;
+      /* Arrow pointing upwards */
+    }
 
-        .go {
-            padding-left: 6%;
-            margin-top: 4%;
-        }
-.connect{
-        margin-left: 45%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-right: 41%;
-        animation: borderRotate 4s linear infinite;
-        padding: 10px;
-       padding-right: 5px;
-    border-radius: 4px;
-    border: 3px solid;
-    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-}
-.connect a{
-    text-decoration: none;
-}
-.connect a:hover{
-    color: #87CEEB;
-}
-@media (max-width: 768px){
+    .tooltip {
+      display: none;
+      position: absolute;
+      bottom: 120%;
+      /* Adjust as needed to position the tooltip above the service item */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 33, 0.9);
+      color: white;
+      padding: 10px;
+      border: 1px solid blueviolet;
+      border-radius: 5px;
+      z-index: 10;
+      width: 250px;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    li:hover .tooltip {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    a {
+      color: rgb(147, 93, 198);
+    }
+
+    .go {
+      padding-left: 6%;
+      margin-top: 4%;
+    }
+
     .connect {
+      margin-left: 45%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-right: 41%;
+      animation: borderRotate 4s linear infinite;
+      padding: 10px;
+      padding-right: 5px;
+      border-radius: 4px;
+      border: 3px solid;
+      transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .connect a {
+      text-decoration: none;
+    }
+
+    .connect a:hover {
+      color: #87CEEB;
+    }
+
+    @media (max-width: 768px) {
+      .connect {
         margin-left: 20px;
         margin-right: 20px;
         padding-left: 10px;
+      }
     }
-}
 
-      
-        
-        .project-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
 
-        .project-card {
-    background-color: #1a1a3d;
-    padding: 20px;
-    border-radius: 10px;
-    border: 3px solid;
-    border-image: linear-gradient(45deg, purple, blue) 1; /* Initial gradient border */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-    overflow: hidden;
-    position: relative;
-    width: 280px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    animation: borderRotate 4s linear infinite; /* Apply animation */
-}
-@media (max-width: 768px) {
+
+    .project-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
     .project-card {
-        width: calc(45% - 4px); /* Ensure two cards fit in one row with gap */
-        margin: 2px; /* Ensure spacing is consistent */
+      background-color: #1a1a3d;
+      padding: 20px;
+      border-radius: 10px;
+      border: 3px solid;
+      border-image: linear-gradient(45deg, purple, blue) 1;
+      /* Initial gradient border */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+      position: relative;
+      width: 260px;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation: borderRotate 4s linear infinite;
+      /* Apply animation */
+    }
+
+    @media (max-width: 768px) {
+      .project-card {
+        width: calc(45% - 4px);
+        /* Ensure two cards fit in one row with gap */
+        margin: 2px;
+        /* Ensure spacing is consistent */
+
+      }
+
 
     }
 
-   
-}
-
-/* Animation for rotating border color */
-@keyframes borderRotate {
-    0% {
+    /* Animation for rotating border color */
+    @keyframes borderRotate {
+      0% {
         border-image: linear-gradient(45deg, purple, blue) 1;
-    }
-    50% {
+      }
+
+      50% {
         border-image: linear-gradient(45deg, blue, purple) 1;
-    }
-    100% {
+      }
+
+      100% {
         border-image: linear-gradient(45deg, purple, blue) 1;
+      }
     }
-}
 
-/* Neon hover effect */
-.project-card:hover {
-    transform: translateY(-10px);
-    background-color: #2a2a5d;
-    box-shadow: 0 0 15px rgba(0, 0, 255, 0.8), 0 0 35px rgba(255, 0, 255, 0.6);
-}
+    /* Neon hover effect */
+    .project-card:hover {
+      transform: translateY(-10px);
+      background-color: #2a2a5d;
+      box-shadow: 0 0 15px rgba(0, 0, 255, 0.8), 0 0 35px rgba(255, 0, 255, 0.6);
+    }
 
 
-        .project-card video {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+    .project-card video {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
 
-        .project-description {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #ddd;
-            transition: max-height 0.3s ease;
-            max-height: 50px;
-            overflow: hidden;
-            line-height: 1.4;
-        }
+    .project-description {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #ddd;
+      transition: max-height 0.3s ease;
+      max-height: 50px;
+      overflow: hidden;
+      line-height: 1.4;
+    }
 
-        .project-description.expanded {
-            max-height: 200px;
-        }
+    .project-description.expanded {
+      max-height: 200px;
+    }
 
-        .read-more {
-            cursor: pointer;
-            color: blueviolet;
-            text-align: center;
-            margin-top: 10px;
-        }
-        .read-more:hover{
-          color: rgb(17, 146, 206);
-        }
-        .pr{
-     
-            text-align: center;
+    .read-more {
+      cursor: pointer;
+      color: blueviolet;
+      text-align: center;
+      margin-top: 10px;
+    }
 
-        }
-        .prw{
-            content: "★";
-            color: blue;
-            color: hsl(271, 76%, 53%);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            padding-left: 30px;
-            font-weight: bold;
-        }
-        h2 {
-            color: blueviolet;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        h2::after {
-    content: "";
-    display: block;
-    width: 10%; /* Adjust width as needed */
-    height: 3px; /* Adjust thickness of the line */
-    margin: 10px auto; /* Center the line */
-    background: linear-gradient(90deg, purple, blue); /* Neon gradient */
-    box-shadow: 0 0 2px rgba(138, 43, 226, 0.8), 0 0 30px rgba(0, 0, 255, 0.8); /* Glowing effect */
-    /* animation: neon-glow 2s infinite alternate; Neon animation */
-}
-              h3 {
-            color: blueviolet;
-            font-size: 1.5rem;
-            margin-bottom: .5rem;
-            padding-left: 20px;
-        }
-        .p{
-            text-decoration: none;
-            text-align: center;
-            font-size: 18px;
-            padding-left: 20%;
-            justify-content: center;
-        }
-        .p:hover{
-            color: blueviolet;
-        }
+    .read-more:hover {
+      color: rgb(17, 146, 206);
+    }
 
-       /* Scroll to Top Button */
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;  /* Reduced size */
-    height: 50px; /* Reduced size */
-    background-color: rgb(90, 28, 149); /* Theme color */
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.5rem;  /* Reduced arrow size */
-    font-weight: bold;  /* Thicker arrow */
-    text-align: center;
-    line-height: 50px;
-    cursor: pointer;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    z-index: 999;
-    display: none; /* Initially hidden */
-}
+    .pr {
 
-/* Pop-up and Light Effect */
-.scroll-to-top::before {
-    content: '';
-    position: absolute;
-    width: 80px; /* Smaller light effect */
-    height: 80px;
-    background: blue; /* Light red glow */
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    filter: blur(15px);  /* Softer glow */
-    z-index: -1; /* Behind the button */
-    opacity: 0.5;
-}
+      text-align: center;
 
-/* Hover Effect */
-.scroll-to-top:hover {
-    transform: scale(1.1);
-}
+    }
 
-/* Pop-up Animation */
-.scroll-to-top.active {
-    display: block;
-    opacity: 1;
-    animation: popUp 0.5s ease-in-out;
-}
+    .prw {
+      content: "★";
+      color: blue;
+      color: hsl(271, 76%, 53%);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      padding-left: 30px;
+      font-weight: bold;
+    }
 
-@keyframes popUp {
-    0% {
+    h2 {
+      color: blueviolet;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 10%;
+      /* Adjust width as needed */
+      height: 3px;
+      /* Adjust thickness of the line */
+      margin: 10px auto;
+      /* Center the line */
+      background: linear-gradient(90deg, purple, blue);
+      /* Neon gradient */
+      box-shadow: 0 0 2px rgba(138, 43, 226, 0.8), 0 0 30px rgba(0, 0, 255, 0.8);
+      /* Glowing effect */
+      /* animation: neon-glow 2s infinite alternate; Neon animation */
+    }
+
+    h3 {
+      color: blueviolet;
+      font-size: 1.5rem;
+      margin-bottom: .5rem;
+      padding-left: 20px;
+    }
+
+    .p {
+      text-decoration: none;
+      text-align: center;
+      font-size: 18px;
+      padding-left: 20%;
+      justify-content: center;
+    }
+
+    .p:hover {
+      color: blueviolet;
+    }
+
+
+
+    /* Scroll to Top Button */
+    #scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      /* Reduced size */
+      height: 50px;
+      /* Reduced size */
+      background-color: rgb(90, 28, 149);
+      /* Theme color */
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      /* Reduced arrow size */
+      font-weight: bold;
+      /* Thicker arrow */
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      z-index: 999;
+      display: none;
+      /* Initially hidden */
+    }
+
+    /* Pop-up and Light Effect */
+    .scroll-to-top::before {
+      content: '';
+      position: absolute;
+      width: 80px;
+      /* Smaller light effect */
+      height: 80px;
+      background: blue;
+      /* Light red glow */
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      filter: blur(15px);
+      /* Softer glow */
+      z-index: -1;
+      /* Behind the button */
+      opacity: 0.5;
+    }
+
+    /* Hover Effect */
+    .scroll-to-top:hover {
+      transform: scale(1.1);
+    }
+
+    /* Pop-up Animation */
+    .scroll-to-top.active {
+      display: block;
+      opacity: 1;
+      animation: popUp 0.5s ease-in-out;
+    }
+
+    @keyframes popUp {
+      0% {
         transform: scale(0.7);
         opacity: 0;
-    }
-    100% {
+      }
+
+      100% {
         transform: scale(1);
         opacity: 1;
+      }
     }
-}
 
-/* Scroll-to-Top Button: Hide and Show when Scrolling */
-@keyframes fadeOut {
-    0% {
+    /* Scroll-to-Top Button: Hide and Show when Scrolling */
+    @keyframes fadeOut {
+      0% {
         opacity: 1;
-    }
-    100% {
+      }
+
+      100% {
         opacity: 0;
+      }
     }
-}
-/* About Section */
-.rightSection {
-    flex: 1; /* Allow the image to take up space */
-    display: flex;
-    justify-content: center; /* Center the image horizontally */
-}
-.rightSection img {
-    width: 100%; /* Take up 100% of the container's width */
-    max-width: 600px; /* Ensure it doesn't exceed 600px */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px;
-    
-}.about-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-    /* background-color: rgb(0, 0, 33);  */
-    color: #fff;
-    flex-wrap: wrap;
-   
-}
 
+    /* About Section */
+    .rightSection {
+      flex: 1;
+      /* Allow the image to take up space */
+      display: flex;
+      justify-content: center;
+      /* Center the image horizontally */
+    }
 
-/* Adjust left content padding and centering */
-.about-content {
-    flex: 1;
-    padding-right: 10px;
-    padding-left: 10%; 
-}
+    .rightSection img {
+      width: 100%;
+      /* Take up 100% of the container's width */
+      max-width: 600px;
+      /* Ensure it doesn't exceed 600px */
+      height: auto;
+      /* Maintain aspect ratio */
+      border-radius: 10px;
 
-.about-content h2 {
-    font-size: 2.3rem;
-    margin-bottom: 20px;
-  margin-right: 60%;
-    
-}
-@media (max-width: 768px) {
+    }
+
     .about-section {
-        flex-direction: column; /* Stack content vertically */
-        align-items: flex-start; /* Align to left on mobile */
-        padding: 5px; /* Reduce padding */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px;
+      /* background-color: rgb(0, 0, 33);  */
+      color: #fff;
+      flex-wrap: wrap;
+
     }
 
+
+    /* Adjust left content padding and centering */
     .about-content {
-        text-align: left; /* Align text to left */
-        padding-left: 2%;  /* Adjust padding */
-        padding-right: 2%;
-        margin-left: 0px; /* Remove unnecessary margins */
-        margin-right: 0px; /* Remove unnecessary margins */
-        width: 100%; /* Full width for mobile */
+      flex: 1;
+      padding-right: 10px;
+      padding-left: 10%;
     }
 
     .about-content h2 {
-        font-size: 2rem; /* Adjust font size for mobile */
-        margin-right: 0; /* Remove excessive right margin */
+      font-size: 2.3rem;
+      margin-bottom: 20px;
+      margin-right: 60%;
+
     }
 
-    .about-content p {
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        /* Stack content vertically */
+        align-items: flex-start;
+        /* Align to left on mobile */
+        padding: 5px;
+        /* Reduce padding */
+      }
+
+      .about-content {
+        text-align: left;
+        /* Align text to left */
+        padding-left: 2%;
+        /* Adjust padding */
+        padding-right: 2%;
+        margin-left: 0px;
+        /* Remove unnecessary margins */
+        margin-right: 0px;
+        /* Remove unnecessary margins */
+        width: 100%;
+        /* Full width for mobile */
+      }
+
+      .about-content h2 {
+        font-size: 2rem;
+        /* Adjust font size for mobile */
+        margin-right: 0;
+        /* Remove excessive right margin */
+      }
+
+      .about-content p {
         font-size: 0.6rem;
-        margin-left: 0px; /* Ensure text starts from the left */
-    }
+        margin-left: 0px;
+        /* Ensure text starts from the left */
+      }
 
-    /* Hide the right-side image on mobile */
-    .rightSection {
+      /* Hide the right-side image on mobile */
+      .rightSection {
         display: none;
-    }
+      }
 
-    /* Skills Buttons Mobile Adjustments */
-    .skills-container {
+      /* Skills Buttons Mobile Adjustments */
+      .skills-container {
         /* justify-content: center; Center skills buttons on mobile */
         padding-left: 0;
         padding-right: 0;
-       
-    }
 
-    .stack-container {
+      }
+
+      .stack-container {
         justify-content: center;
         padding-left: 0;
         padding-right: 0;
+      }
     }
-}
 
 
-.about-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    margin-left: 55px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif ;
-}
-
-/* Skills Buttons */
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 30px;
-    flex: 1;
-    padding-right: 30px;
-    padding-left: 50px;
-}
-
-.skill-button {
-    background-color: #333;
-    border: none;
-    padding: 10px 15px;
-    color: #fff;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.skill-button:hover {
-    background-color: #8A2BE2; /* Theme color for hover */
-}
-
-/* Stack Logos (MERN + WordPress) */
-.stack-container {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    flex: 1;
-    padding-right: 30px;
-    padding-left: 50px;
-}
-
-.mern-stack, .wordpress-stack {
-    display: flex;
-    gap: 10px;
-}
-
-.stack-icon {
-    width: 200px;  /* Adjust size of logos */
-    height: 80px;
-}
-
-.plus-sign {
-    font-size: 2rem;
-    margin: 0 20px;
-    color: #fff;
-    display: inline-block;
-}
-
-.wordpress-stack .stack-icon {
-    width: 150px;  /* Adjust size of WordPress logo */
-    height: 150px;
-}
-
-/* Hover Effect for Logos */
-.stack-icon:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s;
-}
-
-/* Right-Side Image Section */
-.about-image {
-    flex: 1;
-    text-align: center;
-    position: relative;
-
-}
-/* Neon Effect for Image */
-.image-right {
-    /* margin-top: 3%; */
-    max-width: 80%;
-    height: 70%;
-    border-radius: 50%; /* Makes ythe image round */
-    transition: transform 0.3s ease;
-    box-shadow: 0px 0px 20px 10px  rgba(0, 255, 255, 0.7); /* Initial glow  rgba(0, 255, 255, 0.7)*/
-    border: 4px solid transparent; /* No border initially */
-   margin-bottom: 10%;
-}
-
-.image-right:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-}
-
-/* Neon Animation Effect */
-.neon-effect {
-    animation: neon-glow 4s infinite alternate;
-}
-
-
-/* Keyframes for the Neon Glow */
-@keyframes neon-glow {
-    0% {
-        box-shadow: 0px 0px 20px 10px rgba(0, 255, 255, 0.7); /* Blue Glow */
-        border-color: rgba(0, 255, 255, 0.8); /* Blue Border */
+    .about-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      margin-left: 55px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
-    50% {
-        box-shadow: 0px 0px 25px 15px rgba(255, 0, 255, 0.7); /* Violet Glow */
-        border-color: rgba(255, 0, 255, 0.8); /* Violet Border */
+
+    /* Skills Buttons */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex: 1;
+      padding-right: 30px;
+      padding-left: 50px;
     }
-    100% {
-        box-shadow: 0px 0px 20px 10px rgba(0, 255, 255, 0.7); /* Back to Blue */
-        border-color: rgba(0, 255, 255, 0.8); /* Blue Border */
+
+    .skill-button {
+      background-color: #333;
+      border: none;
+      padding: 10px 15px;
+      color: #fff;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
     }
-}
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-/* Container */
-.contact-section {
-  padding: 50px 0;
-  background-color:rgba(0, 0, 33) ;
-  color: #fff;
-  font-family: 'Poppins', sans-serif; /* Added modern font */
-}
+    .skill-button:hover {
+      background-color: #8A2BE2;
+      /* Theme color for hover */
+    }
+
+    /* Stack Logos (MERN + WordPress) */
+    .stack-container {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      flex: 1;
+      padding-right: 30px;
+      padding-left: 50px;
+    }
+
+    .mern-stack,
+    .wordpress-stack {
+      display: flex;
+      gap: 10px;
+    }
+
+    .stack-icon {
+      width: 200px;
+      /* Adjust size of logos */
+      height: 80px;
+    }
+
+    .plus-sign {
+      font-size: 2rem;
+      margin: 0 20px;
+      color: #fff;
+      display: inline-block;
+    }
+
+    .wordpress-stack .stack-icon {
+      width: 150px;
+      /* Adjust size of WordPress logo */
+      height: 150px;
+    }
+
+    /* Hover Effect for Logos */
+    .stack-icon:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s;
+    }
+
+    /* Right-Side Image Section */
+    .about-image {
+      flex: 1;
+      text-align: center;
+      position: relative;
+
+    }
+
+    /* Neon Effect for Image */
+    .image-right {
+      /* margin-top: 3%; */
+      max-width: 80%;
+      height: 70%;
+      border-radius: 50%;
+      /* Makes ythe image round */
+      transition: transform 0.3s ease;
+      box-shadow: 0px 0px 20px 10px rgba(0, 255, 255, 0.7);
+      /* Initial glow  rgba(0, 255, 255, 0.7)*/
+      border: 4px solid transparent;
+      /* No border initially */
+      margin-bottom: 10%;
+    }
+
+    .image-right:hover {
+      transform: scale(1.05);
+      /* Slight zoom on hover */
+    }
+
+    /* Neon Animation Effect */
+    .neon-effect {
+      animation: neon-glow 4s infinite alternate;
+    }
 
 
-.container {
-  display: flex;
-  flex-direction: row; 
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    /* Keyframes for the Neon Glow */
+    @keyframes neon-glow {
+      0% {
+        box-shadow: 0px 0px 20px 10px rgba(0, 255, 255, 0.7);
+        /* Blue Glow */
+        border-color: rgba(0, 255, 255, 0.8);
+        /* Blue Border */
+      }
 
-/* Contact Info Section */
-.contact-info {
-  flex: 1;
-}
+      50% {
+        box-shadow: 0px 0px 25px 15px rgba(255, 0, 255, 0.7);
+        /* Violet Glow */
+        border-color: rgba(255, 0, 255, 0.8);
+        /* Violet Border */
+      }
 
-.contact-info h2 {
-  font-size: 2.5rem;
-  color: blueviolet;
-  font-weight: 600;
+      100% {
+        box-shadow: 0px 0px 20px 10px rgba(0, 255, 255, 0.7);
+        /* Back to Blue */
+        border-color: rgba(0, 255, 255, 0.8);
+        /* Blue Border */
+      }
+    }
 
-}
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.contact-info h2 span {
-  color: blue;
-}
+    /* Container */
+    .contact-section {
+      padding: 50px 0;
+      background-color: rgba(0, 0, 33);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      /* Added modern font */
+    }
 
-.contact-info p {
-  margin: 15px 0;
-  line-height: 1.5;
-  font-size: 1.3rem;
-  max-width: 400px;
-  font-family:Georgia, 'Times New Roman', Times, serif;
 
-}
-
-.contact-details {
-  list-style: none;
-  margin: 20px 0;
-}
-
-.contact-details li {
-  margin: 10px 0;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.contact-details i {
-  margin-right: 10px;
-  font-size: 1.5rem;
-  color: blueviolet;
-}
-
-.contact-details .fa-phone {
-  color: blueviolet;
-}
-
-.contact-details .fa-envelope {
-  color: blueviolet;
-}
-
-/* Social Icons */
-.social-icons {
-  /* margin-top: 20px; */
-  display: flex;
-  gap: 5px;
-
-}
-
-.social-icon {
-  display: inline-block;
-  border: 2px solid blueviolet;
-  /* padding: 10px; */
-  padding: 2px 10px 2px 10px;
-
-  border-radius: 50%;
-  transition: background-color 0.3s, color 0.3s;
-  color: blueviolet;
-  font-size: 1.5rem;
-  margin-left: 30px;
-}
-
-.social-icon:hover {
-  background-color: blueviolet;
-  color: #fff;
-}
-
-/* Contact Form Section */
-.contact-form {
-  flex: 1;
-  background-color: #1a1a1a;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.contact-form .form-group {
-  margin-bottom: 15px;
-}
-
-.contact-form input, 
-.contact-form textarea {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  border-radius: 5px;
-  background-color: #333;
-  color: #fff;
-  font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-.contact-form button {
-  padding: 10px 20px;
-  background-color: blueviolet;
-  border: none;
-  color: #000;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border-radius: 5px;
-  font-family: 'Poppins', sans-serif;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  box-shadow: 0 0 20px blueviolet
-}
-
-.contact-form button:hover {
-  background-color: #87CEEB ;
-  box-shadow: 0 0 15px rgba(0, 0, 255, 0.5); /* Added light/glowing effect */
-}
-@media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Stack elements vertically on small screens */
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .contact-info,
-    .contact-form {
-        width: 100%; /* Full width for smaller screens */
+    /* Contact Info Section */
+    .contact-info {
+      flex: 1;
     }
-    .contact-info p{
+
+    .contact-info h2 {
+      font-size: 2.5rem;
+      color: blueviolet;
+      font-weight: 600;
+
+    }
+
+    .contact-info h2 span {
+      color: blue;
+    }
+
+    .contact-info p {
+      margin: 15px 0;
+      line-height: 1.5;
+      font-size: 1.3rem;
+      max-width: 400px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+
+    }
+
+    .contact-details {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .contact-details li {
+      margin: 10px 0;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .contact-details i {
+      margin-right: 10px;
+      font-size: 1.5rem;
+      color: blueviolet;
+    }
+
+    .contact-details .fa-phone {
+      color: blueviolet;
+    }
+
+    .contact-details .fa-envelope {
+      color: blueviolet;
+    }
+
+    /* Social Icons */
+    .social-icons {
+      /* margin-top: 20px; */
+      display: flex;
+      gap: 5px;
+
+    }
+
+    .social-icon {
+      display: inline-block;
+      border: 2px solid blueviolet;
+      /* padding: 10px; */
+      padding: 2px 10px 2px 10px;
+
+      border-radius: 50%;
+      transition: background-color 0.3s, color 0.3s;
+      color: blueviolet;
+      font-size: 1.5rem;
+      margin-left: 30px;
+    }
+
+    .social-icon:hover {
+      background-color: blueviolet;
+      color: #fff;
+    }
+
+    /* Contact Form Section */
+    .contact-form {
+      flex: 1;
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .contact-form .form-group {
+      margin-bottom: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contact-form button {
+      padding: 10px 20px;
+      background-color: blueviolet;
+      border: none;
+      color: #000;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 20px blueviolet
+    }
+
+    .contact-form button:hover {
+      background-color: #87CEEB;
+      box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
+      /* Added light/glowing effect */
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        /* Stack elements vertically on small screens */
+      }
+
+      .contact-info,
+      .contact-form {
+        width: 100%;
+        /* Full width for smaller screens */
+      }
+
+      .contact-info p {
         font-size: 1.1rem;
         margin-left: 10px;
+      }
     }
-}
-/* Buttons Styling */
+
+    /* Buttons Styling */
 
 
 
@@ -1015,572 +1308,885 @@
       height: 100%;
       z-index: -1;
       position: fixed;
-     
+
     }
-    .hellomg{
-        font-size: 1.1rem;
-        font-family: 'Times New Roman', Times, serif;
-    margin-top: 10px;
-     
-       
+
+    .hellomg {
+      font-size: 1.1rem;
+      font-family: 'Times New Roman', Times, serif;
+      margin-top: 10px;
+
+
     }
-    .hello{
-        align-items: left;
+
+    .hello {
+      align-items: left;
     }
-   
+
     .scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;  
-    height: 50px;
-    background-color: rgb(90, 28, 149);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 18px;
-    text-align: center;
-    line-height: 50px; /* Vertically center the text */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    z-index: 100;
-}
-
-.scroll-to-top:hover {
-    background-color: skyblue;
-}
-@media (max-width: 768px) {
-    *{
-        margin: 0%;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: rgb(90, 28, 149);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+      text-align: center;
+      line-height: 50px;
+      /* Vertically center the text */
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 100;
     }
-}
 
+    .scroll-to-top:hover {
+      background-color: skyblue;
+    }
 
+    @media (max-width: 768px) {
+      * {
+        margin: 0%;
+      }
+    }
 
-    </style>
+    .demo-projects {
+      display: flex;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      /* Smooth scrolling */
+      gap: 20px;
+      padding: 20px;
+      width: 100%;
+    }
+
+    .demo-projects .project-card {
+      flex-shrink: 0;
+      width: 180px;
+      height: 220px;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
 </head>
+
 <body>
-    <div id="particles-js"></div>
-    <header>
-        <nav class="navbar">
-            <div class="left">Portfolio</div>
-            <div class="right">
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#fullstack-projects">Projects</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
-                </ul>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </nav>
-                
-                <!-- Sidebar -->
-                <div class="sidebar" id="sidebar">
-                  <ul>
-                      <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#fullstack-projects">Projects</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
-                </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+  <div id="particles-js"></div>
+  <header>
+    <nav class="navbar">
+      <div class="left">Portfolio</div>
+      <div class="right">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#fullstack-projects">Projects</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
 
-    <main>
-
-
-        <!-- Scroll to Top Button -->
-<button id="scrollToTopBtn" class="scroll-to-top">
-    ↑
-</button>
-
-        <section id="home" class="firstSection">
-            <div class="leftSection">
-               <h1> Hi, My name is <span class="purple">Tahmish</span></h1>
-               <div class="hello"> <div class="small">And I am a  <span id="element"></span>  </div>
-                <p class="hellomg">
-                    A passionate WordPress developer with experience in building dynamic and responsive websites. I focus on creating clean, functional, and user-friendly web experiences. Let's work together to bring your vision to life!
-                </p>
-            </div>
-                <div class="buttons">
-                    <button id="checkCvBtn" class="btn cv-btn">Check CV</button>
-                    <a href="https://www.upwork.com/freelancers/~012099b08d3f1bf273?viewMode=1" target="_blank" class="btn btnhm">Hire Me</a>
-                  </div>
-                </div>
-                
-                <!-- Modal for CV -->
-                <div id="cvModal" class="modal">
-                  <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <iframe src="assets\Tahmish_Resume.pdf" class="cv-viewer"></iframe>
-                    <a href="assets\Tahmish_Resume.pdf" download class="download-btn">Download CV</a>
-                  </div>
-                </div>
-                <div class="about-image">
-                    <img src="assets\Screenshot_2024-09-28_192003-removebg-preview (3).png" alt="Your Image" class="image-right">
-                </div>
-            </div>
-            
-            
-            <!-- <div class="about-image">
-                <img src="assets\Screenshot_2024-09-28_192003-removebg-preview (3).png" alt="Your Image" class="image-right">
-            </div> -->
-
-        </section>
-        <section id="about" class="about-section">
-            
-            <div class="rightSection">
-                <img src="https://cdni.iconscout.com/illustration/premium/thumb/female-developer-6992631-5699680.png" alt="">
-            </div>
-
-            <div class="about-content">
-                
-                <h2>About Me</h2>
-                <p>
-                    <p>Hello! I'm <strong>Tahmish Sadiya</strong>, a passionate full-stack web developer and WordPress specialist, I bring a unique blend of technical expertise and creative problem-solving to every project. My journey into the world of web development has equipped me with the skills and insights needed to build dynamic, user-friendly websites that drive results.I am proficent in:
-                </p>
-        
-                <!-- Skills Container -->
-                <div class="skills-container">
-                    <button class="skill-button">FRONTEND DEVELOPMENT</button>
-                    <button class="skill-button">React</button>
-                    <button class="skill-button">HTML</button>
-                    <button class="skill-button">CSS</button>
-                    <button class="skill-button">JavaScript</button>
-                    <button class="skill-button">Bootstrap</button>
-                    <button class="skill-button">Tailwind css </button>
-                    <button class="skill-button">Typescript</button>
-                    <button class="skill-button">BACKEND DEVELOPMENT</button>
-                    <button class="skill-button">NODEJS</button>
-                    <button class="skill-button">EXPRESSJS</button>
-                    <button class="skill-button">RestAPI</button>
-                    <button class="skill-button">DATABASES</button>
-                    <button class="skill-button">SQL</button>
-                    <button class="skill-button">MONGODB</button>
-                    <button class="skill-button">GIT</button>
-                    <button class="skill-button">GITHUB</button>
-                    <button class="skill-button">SPLIN</button>
-                    <button class="skill-button">WORDPRESS</button>
-                    <button class="skill-button">Theme</button>
-                    <button class="skill-button">plugin development</button>
-                    <!-- Add more skill buttons -->
-                </div>
-        
-                <!-- Stacks (MERN + WordPress) -->
-                <div class="stack-container">
-                    <div class="mern-stack">
-                        <img src="assets/MERN-logo.png" alt="MERN Stack" class="stack-icon">
-                    </div>
-                    <span class="plus-sign">+</span>
-                    <div class="wordpress-stack">
-                        <img src="assets/wordpress-logo-wordpress-icon-transparent-free-png.webp" alt="WordPress" class="stack-icon">
-                    </div>
-                </div>
-            </div>
-        
-            <!-- Right-Side Image Section -->
-            <!-- <div class="about-image">
-                <img src="assets\Screenshot_2024-09-28_192003-removebg-preview (3).png" alt="Your Image" class="image-right">
-            </div> -->
-        </section>
-        
-
-        <section id="services" class="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li>
-                    Custom Website Development
-                    <div class="tooltip">Tailor-made websites for your unique needs.</div>
-                </li>
-                <li>
-                    Responsive Design
-                    <div class="tooltip">Ensuring your website looks great on any device.</div>
-                </li>
-                <li>
-                    E-commerce Solutions
-                    <div class="tooltip">Make your business online.</div>
-                </li>
-                <li>
-                    Custom Web Applications
-                    <div class="tooltip">Dynamic applications to suit your business requirements.</div>
-                </li>
-                <li>
-                    SEO Optimization
-                    <div class="tooltip">Improve your site's visibility on search engines.</div>
-                </li>
-                <li>
-                    Maintenance and Support
-                    <div class="tooltip">Keeping your website up-to-date and running smoothly.</div>
-                </li>
-                <li>
-                    Business Website Development
-                    <div class="tooltip">Professional websites for your business.</div>
-                </li>
-                <li>
-                    WordPress Development
-                    <div class="tooltip">Custom WordPress solutions for your needs.</div>
-                </li>
-               
-                <li>
-                    Site Migration and Maintenance
-                    <div class="tooltip"> Say goodbye to the headaches of moving your website! Our seamless site migration service ensures a smooth transition with no data loss and minimal downtime. Let us handle the complexities while you focus on growing your business.</div>
-                </li>
-            </ul>
-        </section>
-        <p class="connect"><a href="#contact">Ready to work with us</a></p>
-
-    
-        <section id="fullstack-projects">
-           <div class="pr"> <h2> My Projects</h2> </div>
-            <h3>Full Stack Projects</h3>
-            <div class="project-list">
-                <div class="project-card">
-                    <strong>Full Stack Clone of Airbnb Website</strong>
-                    <p><a href="https://delta-project-038y.onrender.com/listings">View Project</a></p>
-                    <video controls muted>
-                        <source src="assets\wanderLust - Google Chrome 2024-02-12 15-29-10.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="project-description">
-                      Developed a full stack project made frontend with HTML,CSS,JavaScript and boostrap.And backend with nodejs,expressjs,password.js for sign-upand login authentication and used many more technologies for the proper functionality of backend so you can create,edit,delete the listing and can give a review for that perticular listing and all the data of listings is store with the help of cloudinary and MONGOdb for whole website data.
-                    </div>
-                    <div class="read-more">Read more...</div>
-                </div>
-                <div class="project-card">
-                    <strong>Amazon Clone</strong>
-                    <p><a href="https://github.com/Its-TahmishSadiya16/amazon-clone-.git">GitHub Link</a></p>
-                    <video controls muted>
-                        <source src="assets\amazon - Google Chrome 2024-02-11 23-36-18.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="project-description">
-                        Made using HTML and CSS. Implemented functionality for dark or light mode using JavaScript.
-                    </div>
-                    <div class="read-more">Read more...</div>
-                </div>
-                <div class="project-card">
-                    <strong>Calculator</strong>
-                    <p><a href="https://github.com/Its-TahmishSadiya16/Calculator.git">GitHub Link</a></p>
-                    <video controls muted>
-                        <source src="assets\calculator - Google Chrome 2024-02-12 12-33-06.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="project-description">
-                        Made a calculator using HTML, CSS, and JavaScript. Enhanced styling with CSS for a real calculator-like appearance.
-                    </div>
-                    <div class="read-more">Read more...</div>
-                </div>
-                <div class="project-card">
-                    <strong>TodoList</strong>
-                    <p><a href="https://github.com/Its-TahmishSadiya16/Todo-app.git">GitHub Link</a></p>
-                    <video controls muted>
-                        <source src="assets\ToDo App - Google Chrome 2024-02-11 23-03-57.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="project-description">
-                        Developed a todo list app in ReactJS with delete and edit functionality, along with an add button for adding tasks.
-                    </div>
-                    <div class="read-more">Read more...</div>
-                </div>
-                <div class="project-card">
-                    <strong>Weather App</strong>
-                    <p><a href="https://github.com/Its-TahmishSadiya16/weather-app.git">GitHub Link</a></p>
-                    <video controls muted>
-                        <source src="assets\Weather App - Google Chrome 2024-02-12 15-40-24.mp4 " type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="project-description">
-                        Created a weather app in ReactJS using the Open Weather API to find weather conditions for any country, state, or city, displaying images for weather conditions along with humidity, wind speed, and more.
-                    </div>
-                    <div class="read-more">Read more...</div>
-                </div>
-                <div class="project-card">
-                    <strong>Autocomplete search page </strong>
-                    <p><a href="https://github.com/Its-TahmishSadiya16/searchbar.git">GitHub Link</a></p>
-                    <video controls muted>
-                        <source src="assets\Autocomplete searchbar - Google Chrome 2024-02-28 13-26-35.mp4 " type="video/mp4">
-                        
-                    </video>
-                    <div class="project-description">
-                      made a search page with frontend and you can also add a search bar functionality to your website.
-                    </div>
-                    <div class="read-more">Read more...</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="wordpress-projects">
-            <div class="prw">
-                <h3>WordPress Projects</h3>
-            </div> 
-        
-            <div class="project-list">
-                <div class="project-card">
-                    <strong>Wonderword (Blogging website)</strong>
-                    <p><a href="http://wonderword.rf.gd/">View Project</a></p>
-                    <div class="project-description">
-                        I have made a blogging website to post daily blogs, used proper plugins and theme and customized it to make SEO friendly content, and also I have migrated this website from one hosting to another without losing any data.
-                    </div>
-                    <div class="read-more">Read more...</div>
-                </div>
-        
-                <div class="project-card">
-                    <strong>Ecommerce Website</strong>
-                    <video controls>
-                        <source src="assets/Untitled video - Made with Clipchamp.mp4" type="video/mp4">
-                    </video>
-                    <div class="project-description">
-                        This is a just sample ecommerce website with all the ecommerce functionality but you can customize your website as per your needs and can take your small business online and can increase your sales by 20x.
-                    </div>
-                    <div class="read-more">Read more...</div>
-                </div>
-        
-                <div class="project-card">
-                    <strong>Landing Page</strong>
-                    <video controls>
-                        <source src="assets\2024-10-15 14-01-18.mp4" type="video/mp4">
-                    </video>
-                    <div class="project-description">
-                        The landing page for Cobbet National Park helped in their digital marketing and increased their bookings by 20%.
-                    </div>
-                    <div class="read-more">Read more...</div>
-                </div>
-        
-                <div class="project-card">
-                    <strong>Pharmacy Website</strong>
-                    <video controls>
-                        <source src="assets/Untitled video - Made with Clipchamp.mp4" type="video/mp4">
-                    </video>
-                    <div class="project-description">
-                        Created a pharmacy website with Elementor for a pharmacy shop to introduce there business online for there online customer.
-                    </div>
-                    <div class="read-more">Read more...</div>
-                </div>
-            </div>
-        </section>
-        
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#fullstack-projects">Projects</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+      </ul>
     </div>
-            
-        </section>
-       
-       
-         <!--new-->
-        <section id="contact" class="contact-section">
-            <div class="container">
-              <div class="contact-info">
-                <h2>Contact <span>Me</span></h2>
-                <p>Let's work together to build something extraordinary. Whether it's a new project or a quick consultation, I'm here to help you achieve your goals. Let's turn your vision into reality, and together, we'll create something impactful. Feel free to reach out to discuss how I can bring value to your business.</p>
-                <ul class="contact-details">
-                  <li><i class="fa fa-envelope"></i> ahmedaffan1606@gmail.com</li>
-                  <li><i class="fa fa-phone"></i> 8788264035</li>
-                </ul>
-                <div class="social-icons">
-                  <a href="https://github.com/Its-TahmishSadiya16" class="social-icon"><i class="fab fa-github"></i></a>
-                  <a href="https://www.linkedin.com/in/tahmish-sadiya"class="social-icon"><i class="fab fa-linkedin"></i></a>
-                </div>
+  </header>
+
+  <main>
+
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top">
+      ↑
+    </button>
+
+    <section id="home" class="firstSection">
+      <div class="leftSection">
+        <h1> Hi, My name is <span class="purple">Tahmish</span></h1>
+        <div class="hello">
+          <div class="small">And I am a <span id="element"></span> </div>
+          <p class="hellomg">
+            A passionate WordPress developer with experience in building dynamic and responsive websites. I focus on
+            creating clean, functional, and user-friendly web experiences. Let's work together to bring your vision to
+            life!
+          </p>
+        </div>
+        <div class="buttons">
+          <button id="checkCvBtn" class="btn cv-btn">Check CV</button>
+          <a href="https://www.upwork.com/freelancers/~012099b08d3f1bf273?viewMode=1" target="_blank"
+            class="btn btnhm">Hire Me</a>
+        </div>
+      </div>
+
+      <!-- Modal for CV -->
+      <div id="cvModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <iframe src="assets\Tahmish_Resume.pdf" class="cv-viewer"></iframe>
+          <a href="assets\Tahmish_Resume.pdf" download class="download-btn">Download CV</a>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="assets\Screenshot_2024-09-28_192003-removebg-preview (3).png" alt="Your Image" class="image-right">
+      </div>
+      </div>
+
+
+      <!-- <div class="about-image">
+                <img src="assets\Screenshot_2024-09-28_192003-removebg-preview (3).png" alt="Your Image" class="image-right">
+            </div> -->
+
+    </section>
+    <section id="about" class="about-section">
+
+      <div class="rightSection">
+        <img src="https://cdni.iconscout.com/illustration/premium/thumb/female-developer-6992631-5699680.png" alt="">
+      </div>
+
+      <div class="about-content">
+
+        <h2>About Me</h2>
+        <p>
+        <p>Hello! I'm <strong>Tahmish Sadiya</strong>, a passionate full-stack web developer and WordPress specialist, I
+          bring a unique blend of technical expertise and creative problem-solving to every project. My journey into the
+          world of web development has equipped me with the skills and insights needed to build dynamic, user-friendly
+          websites that drive results.I am proficent in:
+        </p>
+
+        <!-- Skills Container -->
+        <div class="skills-container">
+          <button class="skill-button">FRONTEND DEVELOPMENT</button>
+          <button class="skill-button">React</button>
+          <button class="skill-button">HTML</button>
+          <button class="skill-button">CSS</button>
+          <button class="skill-button">JavaScript</button>
+          <button class="skill-button">Bootstrap</button>
+          <button class="skill-button">Tailwind css </button>
+          <button class="skill-button">Typescript</button>
+          <button class="skill-button">BACKEND DEVELOPMENT</button>
+          <button class="skill-button">NODEJS</button>
+          <button class="skill-button">EXPRESSJS</button>
+          <button class="skill-button">RestAPI</button>
+          <button class="skill-button">DATABASES</button>
+          <button class="skill-button">SQL</button>
+          <button class="skill-button">MONGODB</button>
+          <button class="skill-button">GIT</button>
+          <button class="skill-button">GITHUB</button>
+          <button class="skill-button">SPLIN</button>
+          <button class="skill-button">WORDPRESS</button>
+          <button class="skill-button">Theme</button>
+          <button class="skill-button">plugin development</button>
+          <!-- Add more skill buttons -->
+        </div>
+
+        <!-- Stacks (MERN + WordPress) -->
+        <div class="stack-container">
+          <div class="mern-stack">
+            <img src="assets/MERN-logo.png" alt="MERN Stack" class="stack-icon">
+          </div>
+          <span class="plus-sign">+</span>
+          <div class="wordpress-stack">
+            <img src="assets/wordpress-logo-wordpress-icon-transparent-free-png.webp" alt="WordPress"
+              class="stack-icon">
+          </div>
+        </div>
+      </div>
+
+      <!-- Right-Side Image Section -->
+      <!-- <div class="about-image">
+                <img src="assets\Screenshot_2024-09-28_192003-removebg-preview (3).png" alt="Your Image" class="image-right">
+            </div> -->
+    </section>
+
+
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>
+          Custom Website Development
+          <div class="tooltip">Tailor-made websites for your unique needs.</div>
+        </li>
+        <li>
+          Responsive Design
+          <div class="tooltip">Ensuring your website looks great on any device.</div>
+        </li>
+        <li>
+          E-commerce Solutions
+          <div class="tooltip">Make your business online.</div>
+        </li>
+        <li>
+          Custom Web Applications
+          <div class="tooltip">Dynamic applications to suit your business requirements.</div>
+        </li>
+        <li>
+          SEO Optimization
+          <div class="tooltip">Improve your site's visibility on search engines.</div>
+        </li>
+        <li>
+          Maintenance and Support
+          <div class="tooltip">Keeping your website up-to-date and running smoothly.</div>
+        </li>
+        <li>
+          Business Website Development
+          <div class="tooltip">Professional websites for your business.</div>
+        </li>
+        <li>
+          WordPress Development
+          <div class="tooltip">Custom WordPress solutions for your needs.</div>
+        </li>
+
+        <li>
+          Site Migration and Maintenance
+          <div class="tooltip"> Say goodbye to the headaches of moving your website! Our seamless site migration service
+            ensures a smooth transition with no data loss and minimal downtime. Let us handle the complexities while you
+            focus on growing your business.</div>
+        </li>
+      </ul>
+    </section>
+    <p class="connect"><a href="#contact">Ready to work with us</a></p>
+
+
+    <section id="fullstack-projects">
+      <div class="pr">
+        <h2> My Projects</h2>
+      </div>
+      <h3>Full Stack Projects</h3>
+      <div class="project-list">
+        <div class="project-card">
+          <strong>Full Stack Clone of Airbnb Website</strong>
+          <p><a href="https://delta-project-038y.onrender.com/listings">View Project</a></p>
+          <video controls muted>
+            <source src="assets\wanderLust - Google Chrome 2024-02-12 15-29-10.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="project-description">
+            Developed a full stack project made frontend with HTML,CSS,JavaScript and boostrap.And backend with
+            nodejs,expressjs,password.js for sign-upand login authentication and used many more technologies for the
+            proper functionality of backend so you can create,edit,delete the listing and can give a review for that
+            perticular listing and all the data of listings is store with the help of cloudinary and MONGOdb for whole
+            website data.
+          </div>
+          <div class="read-more">Read more...</div>
+        </div>
+        <div class="project-card">
+          <strong>Amazon Clone</strong>
+          <p><a href="https://github.com/Its-TahmishSadiya16/amazon-clone-.git">GitHub Link</a></p>
+          <video controls muted>
+            <source src="assets\amazon - Google Chrome 2024-02-11 23-36-18.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="project-description">
+            Made using HTML and CSS. Implemented functionality for dark or light mode using JavaScript.
+          </div>
+          <div class="read-more">Read more...</div>
+        </div>
+        <div class="project-card">
+          <strong>Calculator</strong>
+          <p><a href="https://github.com/Its-TahmishSadiya16/Calculator.git">GitHub Link</a></p>
+          <video controls muted>
+            <source src="assets\calculator - Google Chrome 2024-02-12 12-33-06.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="project-description">
+            Made a calculator using HTML, CSS, and JavaScript. Enhanced styling with CSS for a real calculator-like
+            appearance.
+          </div>
+          <div class="read-more">Read more...</div>
+        </div>
+        <div class="project-card">
+          <strong>TodoList</strong>
+          <p><a href="https://github.com/Its-TahmishSadiya16/Todo-app.git">GitHub Link</a></p>
+          <video controls muted>
+            <source src="assets\ToDo App - Google Chrome 2024-02-11 23-03-57.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="project-description">
+            Developed a todo list app in ReactJS with delete and edit functionality, along with an add button for adding
+            tasks.
+          </div>
+          <div class="read-more">Read more...</div>
+        </div>
+        <div class="project-card">
+          <strong>Weather App</strong>
+          <p><a href="https://github.com/Its-TahmishSadiya16/weather-app.git">GitHub Link</a></p>
+          <video controls muted>
+            <source src="assets\Weather App - Google Chrome 2024-02-12 15-40-24.mp4 " type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="project-description">
+            Created a weather app in ReactJS using the Open Weather API to find weather conditions for any country,
+            state, or city, displaying images for weather conditions along with humidity, wind speed, and more.
+          </div>
+          <div class="read-more">Read more...</div>
+        </div>
+        <div class="project-card">
+          <strong>Autocomplete search page </strong>
+          <p><a href="https://github.com/Its-TahmishSadiya16/searchbar.git">GitHub Link</a></p>
+          <video controls muted>
+            <source src="assets\Autocomplete searchbar - Google Chrome 2024-02-28 13-26-35.mp4 " type="video/mp4">
+
+          </video>
+          <div class="project-description">
+            made a search page with frontend and you can also add a search bar functionality to your website.
+          </div>
+          <div class="read-more">Read more...</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="wordpress-projects">
+      <div class="prw">
+        <h3>WordPress Projects</h3>
+      </div>
+
+      <div class="project-list">
+        <div class="project-card">
+          <strong>Wonderword (Blogging website)</strong>
+          <p><a href="http://wonderword.rf.gd/">View Project</a></p>
+          <div class="project-description">
+            I have made a blogging website to post daily blogs, used proper plugins and theme and customized it to make
+            SEO friendly content, and also I have migrated this website from one hosting to another without losing any
+            data.
+          </div>
+          <div class="read-more">Read more...</div>
+        </div>
+
+        <div class="project-card">
+          <strong>Ecommerce Website</strong>
+          <video controls>
+            <source src="assets/Untitled video - Made with Clipchamp.mp4" type="video/mp4">
+          </video>
+          <div class="project-description">
+            This is a just sample ecommerce website with all the ecommerce functionality but you can customize your
+            website as per your needs and can take your small business online and can increase your sales by 20x.
+          </div>
+          <div class="read-more">Read more...</div>
+        </div>
+
+        <div class="project-card">
+          <strong>Landing Page</strong>
+          <video controls>
+            <source src="assets\2024-10-15 14-01-18.mp4" type="video/mp4">
+          </video>
+          <div class="project-description">
+            The landing page for Cobbet National Park helped in their digital marketing and increased their bookings by
+            20%.
+          </div>
+          <div class="read-more">Read more...</div>
+        </div>
+
+        <div class="project-card">
+          <strong>Pharmacy Website</strong>
+          <video controls>
+            <source src="assets\2024-10-15 22-38-53.mp4" type="video/mp4">
+          </video>
+          <div class="project-description">
+            Created a pharmacy website with Elementor for a pharmacy shop to introduce there business online for there
+            online customer.
+          </div>
+          <div class="read-more">Read more...</div>
+        </div>
+
+      </div>
+
+
+      </div>
+    </section>
+
+
+    </section>
+
+
+    <h3>Customizable Designs for Your Unique Needs </h3>
+    <div class="container swiper">
+      <div class="slider-wrapper">
+        <div class="card-list swiper-wrapper">
+          <div class="card-item swiper-slide">
+            <div class="project-card ">
+              <strong>Real Estate Agency</strong>
+              <video controls>
+                <source src="assets\2024-10-16 22-23-38.mp4" type="video/mp4">
+              </video>
+              <div class="project-description">
+                Description: A professional website for real estate agents or agencies, showcasing property listings and
+                enabling easy property searches.
+                Key Functionality:<br>
+                Interactive property search filters (location, price, type).<br>
+                Property listing pages with galleries, maps, and descriptions.<br>
+                Appointment booking for property visits.<br>
+                Mortgage calculator tool.<br>
+                Agent profiles and contact information.<br>
               </div>
-             
-              <div class="contact-form">
-                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
-                  <div class="form-group">
-                    <input type="text" name="name" placeholder="Enter Your Name" required />
-                  </div>
-                  <div class="form-group">
-                    <input type="email" name="email" placeholder="Enter Your Email" required />
-                  </div>
-                  <div class="form-group">
-                    <input type="text" name="subject" placeholder="Enter Your Subject" required />
-                  </div>
-                  <div class="form-group">
-                    <textarea name="message" rows="5" placeholder="Enter Your Message" required></textarea>
-                  </div>
-                  <button type="submit">Submit</button>
-                </form>
-              </div>
+              <div class="read-more">Read more...</div>
             </div>
-          </section>
-          
-          
-    </main>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-     document.addEventListener('scroll', function () {
-  // Get the sidebar element
-  const sidebar = document.querySelector('.sidebar');
+          </div>
 
-  // If the sidebar is open, close it when scrolling
-  if (sidebar.classList.contains('open')) {
-    sidebar.classList.remove('open');
-  }
-});
+          <div class="card-item swiper-slide">
+            <div class="project-card ">
+              <strong>Travel Agency/Tourism Website</strong>
+              <video controls>
+                <source src="assets\2024-10-16 23-32-59.mp4" type="video/mp4">
+              </video>
+              <div class="project-description">
+                Description: A vibrant website for travel agencies, showcasing destinations, tours, and travel packages.
+                Key Functionality:<br>
+                Destination search and filter options.<br>
+                Tour packages with detailed itineraries and pricing.<br>
+                Online booking system for tours or trips.<br>
+                Blog or travel tips section.<br>
+                Testimonials and travel reviews from clients.<br>
+              </div>
+              <div class="read-more">Read more...</div>
+            </div>
+          </div>
+          <div class="card-item swiper-slide">
+            <div class="project-card">
+              <strong>Law Firm/Legal Services Website</strong>
+              <video controls>
+                <source src="assets\2024-10-16 23-39-29.mp4" type="video/mp4">
+              </video>
+              <div class="project-description">
+                Description: A sophisticated and formal website for law firms, focusing on legal services and attorney
+                profiles.
+                Key Functionality:<br>
+                Practice area pages (e.g., corporate law, family law).<br>
+                Attorney bios with expertise details.<br>
+                Case studies or testimonials from clients.<br>
+                Online consultation booking form.<br>
+                FAQ section for common legal queries.<br>
+              </div>
+              <div class="read-more">Read more...</div>
+            </div>
+          </div>
+          <div class="card-item swiper-slide">
+            <div class="project-card">
+              <strong>Wedding Planner Website</strong>
+              <video controls>
+                <source src="assets\2024-10-16 23-47-22.mp4" type="video/mp4">
+              </video>
+              <div class="project-description">
+                Description: A romantic and visually appealing website for wedding planners, showcasing past weddings
+                and packages.
+                Key Functionality:<br>
+                Wedding portfolio showcasing past events.<br>
+                Wedding package details with pricing.<br>
+                Online consultation or booking form.<br>
+                Testimonials from happy couples.<br>
+                Blog for wedding tips and trends.<br>
+              </div>
+              <div class="read-more">Read more...</div>
+            </div>
+          </div>
+          <div class="card-item swiper-slide">
 
-// Toggle sidebar when hamburger is clicked
-document.querySelector('.hamburger').addEventListener('click', function () {
-  const sidebar = document.querySelector('.sidebar');
-  sidebar.classList.toggle('open');
-});
+            <div class="project-card">
+              <strong>Digital Marketing Agency</strong>
+              <video controls>
+                <source src="assets\2024-10-17 22-54-42.mp4" type="video/mp4">
+              </video>
+              <div class="project-description">
+                Description: A results-oriented website for marketing agencies, showcasing services and client success
+                stories.
+                Key Functionality:<br>
+                Service pages (e.g., SEO, social media marketing).:<br>
+                Client case studies or portfolio section.:<br>
+                Testimonials from past clients.:<br>
+                Contact form for lead generation.:<br>
+                Blog or article section for marketing tips.:<br>
+              </div>
+              <div class="read-more">Read more...</div>
+            </div>
+          </div>
+          <div class="card-item swiper-slide">
+            <div class="project-card">
+              <strong>Technology Startup Website/landing page</strong>
+              <video controls>
+                <source src="assets\2024-10-17 22-44-28.mp4" type="video/mp4">
+              </video>
+              <div class="project-description">
+                Description: A modern and innovative website for tech startups, focusing on product offerings and
+                investor relations.
+                Key Functionality:<br>
+                Product or service pages with feature highlights.<br>
+                Contact forms for investor inquiries or partnerships.<br>
+                Client testimonials or case studies.<br>
+                Blog or news section for company updates.<br>
+                Team bios showcasing startup members.<br>
+              </div>
+              <div class="read-more">Read more...</div>
+            </div>
+          </div>
+          <div class="card-item swiper-slide">
+            <div class="project-card">
+              <strong>Influencer Website</strong>
+              <video controls>
+                <source src="assets\2024-10-17 22-57-26.mp4" type="video/mp4">
+              </video>
+              <div class="project-description">
+                Description: A modern blog setup for influencers or personal brands looking to share posts, videos, and
+                updates with their audience.
+                Key Functionality:<br>
+                Blog post section with categories and tags for easy navigation.<br>
+                Social media integration and share buttons.<br>
+                Newsletter signup for audience engagement.<br>
+                Contact form for collaborations or inquiries.<br>
+                Responsive design optimized for mobile users.<br>
+              </div>
+              <div class="read-more">Read more...</div>
+            </div>
+          </div>
+          <div class="card-item swiper-slide">
+            <div class="project-card">
+              <strong>Beauty/healthcare website</strong>
+              <video controls>
+                <source src="assets\2024-10-17 23-11-35.mp4" type="video/mp4">
+              </video>
+              <div class="project-description">
+                Description: A clean, user-friendly website for pharmacies that offer online medicine and Beauty Product
+                orders and home delivery.
+                Key Functionality:<br>
+                Medicine catalog with search and filter options.<br>
+                Online prescription upload for orders.<br>
+                Delivery scheduling and real-time tracking.<br>
+                Customer reviews and ratings for products.<br>
+                Contact form and chat support for queries.<br>
+              </div>
+              <div class="read-more">Read more...</div>
+            </div>
+          </div>
+          <div class="card-item swiper-slide">
+            <div class="project-card">
+              <strong>News Blogging website </strong>
+              <video controls>
+                <source src="assets\2024-10-17 23-00-50.mp4" type="video/mp4">
+              </video>
+              <div class="project-description">
+                Description: A modern daily news blog setup for share posts, videos, and updates with their audience.
+                Key Functionality:<br>
+                Blog post section with categories and tags for easy navigation.<br>
+                Social media integration and share buttons.<br>
+                Newsletter signup for audience engagement.<br>
+                Contact form for collaborations or inquiries.<br>
+                Responsive design optimized for mobile users.<br>
+              </div>
+              <div class="read-more">Read more...</div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-slide-button swiper-button-prev"></div>
+        <div class="swiper-slide-button swiper-button-next"></div>
+      </div>
+    </div>
+    <!-- Linking SwiperJS script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Linking custom script -->
+    <script src="script.js"></script>
+
+    </section>
+
+    </section>
 
 
-        var typed = new Typed('#element', {
-            strings: [ 'Full Stack web Developer.', 'WordPress Developer.'],
-            typeSpeed: 50,
-            loop: true
-        });
-     
+    <!--new-->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-info">
+          <h2>Contact <span>Me</span></h2>
+          <p>Let's work together to build something extraordinary. Whether it's a new project or a quick consultation,
+            I'm here to help you achieve your goals. Let's turn your vision into reality, and together, we'll create
+            something impactful. Feel free to reach out to discuss how I can bring value to your business.</p>
+          <ul class="contact-details">
+            <li><i class="fa fa-envelope"></i> ahmedaffan1606@gmail.com</li>
+            <li><i class="fa fa-phone"></i> 8788264035</li>
+          </ul>
+          <div class="social-icons">
+            <a href="https://github.com/Its-TahmishSadiya16" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/tahmish-sadiya" class="social-icon"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Enter Your Name" required />
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Enter Your Email" required />
+            </div>
+            <div class="form-group">
+              <input type="text" name="subject" placeholder="Enter Your Subject" required />
+            </div>
+            <div class="form-group">
+              <textarea name="message" rows="5" placeholder="Enter Your Message" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
 
 
-        document.querySelectorAll('.read-more').forEach(button => {
-            button.addEventListener('click', function () {
-                const description = this.previousElementSibling;
-                description.classList.toggle('expanded');
-                this.textContent = description.classList.contains('expanded') ? 'Read less...' : 'Read more...';
-            });
-        });
+  </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    // Initialize the Swiper
+    const swiper = new Swiper('.slider-wrapper', {
+      loop: true,
+      grabCursor: true,
+      spaceBetween: 10,
+      autoplay: {
+        delay: 3000, // Set delay to 4 seconds between slides
+        disableOnInteraction: false, // Keep autoplay even after user interactions
+      },
 
-  // Get the modal
-var modal = document.getElementById("cvModal");
+      // Pagination bullets
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true
+      },
 
-// Get the button that opens the modal
-var btn = document.getElementById("checkCvBtn");
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+      // Responsive breakpoints
+      breakpoints: {
+        0: {
+          slidesPerView: 3// Show 1 card on small screens
+        },
+        768: {
+          slidesPerView: 2 // Show 2 cards on medium screens
+        },
+        1024: {
+          slidesPerView: 4 // Show 4 cards on larger screens
+        }
+      }
+    });
 
-// Variable to track if the modal is open
-var isModalOpen = false;
+    // Pause autoplay on mouse hover and resume on mouse leave
+    const swiperContainer = document.querySelector('.slider-wrapper');
 
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-  isModalOpen = true; // Mark modal as open
-}
+    swiperContainer.addEventListener('mouseenter', () => {
+      swiper.autoplay.stop(); // Pause autoplay
+    });
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-  isModalOpen = false; // Mark modal as closed
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    isModalOpen = false; // Mark modal as closed
-  }
-}
-
-// Close the modal when the user scrolls
-window.onscroll = function() {
-  if (isModalOpen) { // Check if the modal is open
-    modal.style.display = "none"; // Close the modal
-    isModalOpen = false; // Mark modal as closed
-  }
-}
+    swiperContainer.addEventListener('mouseleave', () => {
+      swiper.autoplay.start(); // Resume autoplay
+    });
 
 
-particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false
-                },
-                "size": {
-                    "value": 3,
-                    "random": true
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "repulse" // Enable repulse on hover
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push" // Add particles on click
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 200,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 200,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 100,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
+    // Get the sidebar and hamburger elements
+    const sidebar = document.getElementById('sidebar');
+    const hamburger = document.getElementById('hamburger');
 
-   
+    // Toggle sidebar open/close on hamburger click
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('open'); // Toggle 'open' class to show/hide sidebar
+    });
 
-    </script>
+    // Close the sidebar when the user scrolls
+    window.addEventListener('scroll', () => {
+      if (sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open'); // Close the sidebar on scroll
+      }
+    });
+
+
+    var typed = new Typed('#element', {
+      strings: ['Full Stack web Developer.', 'WordPress Developer.'],
+      typeSpeed: 50,
+      loop: true
+    });
+
+    // Get the scroll-to-top button
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+    // Function to show the button when scrolling down
+    window.onscroll = function () {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollToTopBtn.classList.add('active'); // Show the button when scrolled down 300px
+      } else {
+        scrollToTopBtn.classList.remove('active'); // Hide the button when near the top
+      }
+    };
+
+    // Function to smoothly scroll back to the top when the button is clicked
+    scrollToTopBtn.addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Smooth scrolling effect
+      });
+    });
+
+
+    document.querySelectorAll('.read-more').forEach(button => {
+      button.addEventListener('click', function () {
+        const description = this.previousElementSibling;
+        description.classList.toggle('expanded');
+        this.textContent = description.classList.contains('expanded') ? 'Read less...' : 'Read more...';
+      });
+    });
+
+    // Get the modal
+    var modal = document.getElementById("cvModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("checkCvBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // Variable to track if the modal is open
+    var isModalOpen = false;
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+      modal.style.display = "block";
+      isModalOpen = true; // Mark modal as open
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+      isModalOpen = false; // Mark modal as closed
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        isModalOpen = false; // Mark modal as closed
+      }
+    }
+
+    // Close the modal when the user scrolls
+    window.onscroll = function () {
+      if (isModalOpen) { // Check if the modal is open
+        modal.style.display = "none"; // Close the modal
+        isModalOpen = false; // Mark modal as closed
+      }
+    }
+
+
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false
+        },
+        "size": {
+          "value": 3,
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse" // Enable repulse on hover
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push" // Add particles on click
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 200,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 200,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 100,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+
+
+
+  </script>
+
+
 </body>
+
 </html>
-
-
-
